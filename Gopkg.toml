@@ -1,0 +1,54 @@
+# Gopkg.toml example
+#
+# Refer to https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md
+# for detailed Gopkg.toml documentation.
+#
+# required = ["github.com/user/thing/cmd/thing"]
+# ignored = ["github.com/user/project/pkgX", "bitbucket.org/user/project/pkgA/pkgY"]
+#
+# [[constraint]]
+#   name = "github.com/user/project"
+#   version = "1.0.0"
+#
+# [[constraint]]
+#   name = "github.com/user/project2"
+#   branch = "dev"
+#   source = "github.com/myfork/project2"
+#
+# [[override]]
+#   name = "github.com/x/y"
+#   version = "2.4.0"
+#
+# [prune]
+#   non-go = false
+#   go-tests = true
+#   unused-packages = true
+
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/koki/short"
+#  version = "0.4.0"
+
+[[constraint]]
+  name = "github.com/spf13/viper"
+  version = "1.0.2"
+
+#[[constraint]]
+#  branch = "master"
+#  name = "k8s.io/apimachinery"
+[[override]]
+  name = "k8s.io/apimachinery"
+  revision = "bc1325710437b54535daa5d6877ca62df7bd76db"
+
+[[override]]
+  name = "k8s.io/client-go"
+  revision = "fda49991593670c6188139518cf6787e474070d6"
+
+[[override]]
+  name = "k8s.io/api"
+  revision = "af4bc157c3a209798fc897f6d4aaaaeb6c2e0d6a"
+
+[prune]
+  go-tests = true
+  unused-packages = true
