@@ -186,7 +186,7 @@ func NewRcSvc(descriptions []*PerceptorRC) (*types.ReplicationController, []*typ
 		envVar := []types.Env{}
 		for _, env := range desc.env {
 			envVar = append(envVar, types.Env{
-				Type: types.EnvFromType,
+				Type: types.EnvFromEnvType,
 				From: &types.EnvFrom{
 					From: fmt.Sprintf("secret:%s:%s", env.SecretName, env.KeyFromSecret),
 					Key:  env.EnvName,
@@ -218,7 +218,7 @@ func NewRcSvc(descriptions []*PerceptorRC) (*types.ReplicationController, []*typ
 		// Each RC has only one pod, but can have many containers.
 		TheContainers = append(TheContainers, container)
 
-		log.Print(fmt.Sprintf("privileged = %v %v %v", desc.name, desc.dockerSocket, *container.SecurityContext.Privileged))
+		log.Print(fmt.Sprintf("privileged = %v %v %v", desc.name, desc.dockerSocket, *container.Privileged))
 	}
 
 	rc := &types.ReplicationController{

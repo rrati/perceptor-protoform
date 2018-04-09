@@ -26,28 +26,12 @@
 
 
 [[constraint]]
-  branch = "master"
+  version = "0.5.0"
   name = "github.com/koki/short"
-#  version = "0.4.0"
 
 [[constraint]]
   name = "github.com/spf13/viper"
   version = "1.0.2"
-
-#[[constraint]]
-#  branch = "master"
-#  name = "k8s.io/apimachinery"
-[[override]]
-  name = "k8s.io/apimachinery"
-  revision = "bc1325710437b54535daa5d6877ca62df7bd76db"
-
-[[override]]
-  name = "k8s.io/client-go"
-  revision = "fda49991593670c6188139518cf6787e474070d6"
-
-[[override]]
-  name = "k8s.io/api"
-  revision = "af4bc157c3a209798fc897f6d4aaaaeb6c2e0d6a"
 
 [prune]
   go-tests = true
