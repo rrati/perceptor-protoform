@@ -2,12 +2,6 @@
 
 
 [[projects]]
-  branch = "master"
-  name = "github.com/blackducksoftware/perceptor-protoform"
-  packages = ["pkg/model"]
-  revision = "cde595d86891460cafeaa74daf07530db63e1e0e"
-
-[[projects]]
   name = "github.com/fsnotify/fsnotify"
   packages = ["."]
   revision = "c2828203cd70a50dcccfb2761f8b1f8ceef9a8e9"
@@ -406,6 +400,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "703d1c78b5925bbe962540b419009978ce7f3b58f4a05965239b66ad7592c018"
+  inputs-digest = "0afe4c6095c8cc6c23f2c954d554626ed110753e41ed7c956bde86402405e0e9"
   solver-name = "gps-cdcl"
   solver-version = 1

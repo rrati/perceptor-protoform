@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 
-	//	"k8s.io/api/core/v1"
 	"github.com/koki/short/types"
 )
 

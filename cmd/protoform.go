@@ -185,13 +185,11 @@ func NewRcSvc(descriptions []*PerceptorRC) (*types.ReplicationController, []*typ
 
 		envVar := []types.Env{}
 		for _, env := range desc.env {
-			envVar = append(envVar, types.Env{
-				Type: types.EnvFromEnvType,
-				From: &types.EnvFrom{
-					From: fmt.Sprintf("secret:%s:%s", env.SecretName, env.KeyFromSecret),
-					Key:  env.EnvName,
-				},
-			})
+			new, err := types.NewEnvFromSecret(env.EnvName, env.SecretName, env.KeyFromSecret)
+			if err != nil {
+				panic(err)
+			}
+			envVar = append(envVar, new)
 		}
 
 		container := types.Container{
