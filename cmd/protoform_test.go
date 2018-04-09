@@ -48,9 +48,9 @@ func TestProto(t *testing.T) {
 		t.Fail()
 	}
 
-	scanner_svc := rcsArray[2].Spec.Template.Spec.ServiceAccountName
-	if scanner_svc == "" {
-		log.Printf("scanner svc ==> ( %v ) EMPTY !", scanner_svc)
+	scannerSvc := rcsArray[2].Spec.Template.Spec.ServiceAccountName
+	if scannerSvc == "" {
+		log.Printf("scanner svc ==> ( %v ) EMPTY !", scannerSvc)
 		t.Fail()
 	}
 
